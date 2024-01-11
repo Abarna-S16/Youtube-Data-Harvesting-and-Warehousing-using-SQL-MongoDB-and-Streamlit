@@ -1,3 +1,18 @@
+#-----------------------------------Package Installation---------------------------------------#
+# MongoDB
+!python -m pip install "pymongo[srv]"
+
+# MySQL
+!pip install mysql-connector-python
+!pip install pymysql
+!pip install cryptography
+
+#Streamlit
+!pip install streamlit -q
+!pip install streamlit_option_menu
+
+#--------------------------------------------------------------------------------#
+
 # Youtube API libraries
 import googleapiclient.discovery
 from googleapiclient.discovery import build
