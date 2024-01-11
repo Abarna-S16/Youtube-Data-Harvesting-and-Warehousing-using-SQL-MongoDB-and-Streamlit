@@ -1,4 +1,3 @@
-
 # Youtube API libraries
 import googleapiclient.discovery
 from googleapiclient.discovery import build
@@ -62,8 +61,8 @@ if choice=="Channel Data to MongoDB":
       with st.spinner('Fetching the Channel Data...'):
 
         #-----Getting access from youtube API-----#
-        api_key="AIzaSyD0EgysaAJ7tGN175s8pUgx6leIbpuLeOc"
-        youtube=build("youtube","v3",developerKey=api_key)
+        api_key=use_your_key
+        youtube=build("youtube","v3",developerKey=use_your_key)
 
         #-----A function to get channel data-----#
         def get_channel_data(youtube,channel_id):
@@ -247,8 +246,8 @@ if choice=="Channel Data to MongoDB":
     from pymongo.mongo_client import MongoClient
     from pymongo.server_api import ServerApi
     import urllib
-    encoded_password=urllib.parse.quote_plus("sweetdevil")       #------------to parse special characters ------------------
-    uri = f"mongodb+srv://abarna:{encoded_password}@cluster0.x7sznmp.mongodb.net/?retryWrites=true&w=majority"
+    encoded_password=urllib.parse.quote_plus("use_your_password")       #------------to parse special characters ------------------
+    uri = f"mongodb+srv://your_username:{encoded_password}@cluster0.x7sznmp.mongodb.net/?retryWrites=true&w=majority"
 
     # Create a new client and connect to the server
     client = MongoClient(uri, server_api=ServerApi('1'))
@@ -270,12 +269,12 @@ if choice=="Channel Data to MongoDB":
     if mongodb or st.session_state_upload_mongodb:
       st.session_state_upload_mongodb = True
 
-      #-------------insert documents in MongoDB-----------#
+      #-------------insert documents(replace if already exists) in MongoDB-----------#
       final_data = {
                   'Channel_Name': channel_name,
                   "Channel_data":final_dictionary
                   }
-      upload=channels.replace_one({"Channel_Id":channel_Id}, final_data, upsert=True)
+      upload=channels.replace_one({"Channel_Name":channel_name}, final_data, upsert=True)
       st.success('Uploaded Successfully')
       client.close()
 
@@ -288,8 +287,8 @@ if choice=="SQL Warehouse":
   from pymongo.mongo_client import MongoClient
   from pymongo.server_api import ServerApi
   import urllib
-  encoded_password=urllib.parse.quote_plus("sweetdevil")       #------------to parse special characters ------------------#
-  uri = f"mongodb+srv://abarna:{encoded_password}@cluster0.x7sznmp.mongodb.net/?retryWrites=true&w=majority"
+  encoded_password=urllib.parse.quote_plus("your_password")       #------------to parse special characters ------------------#
+  uri = f"mongodb+srv://your_username:{encoded_password}@cluster0.x7sznmp.mongodb.net/?retryWrites=true&w=majority"
 
   # Create a new client and connect to the server
   client = MongoClient(uri, server_api=ServerApi('1'))
@@ -340,7 +339,7 @@ if choice=="SQL Warehouse":
         #-------------A function to retrieve playlist data--------------#
 
         #-----Getting access from youtube API-----#
-        api_key="AIzaSyD0EgysaAJ7tGN175s8pUgx6leIbpuLeOc"
+        api_key="use_your_api_key"
         youtube=build("youtube","v3",developerKey=api_key)
         channel_id=document['Channel_data']['Channel_Details']['Channel_Id']
         def get_playlist_data(youtube,channel_id):
@@ -423,9 +422,9 @@ if choice=="SQL Warehouse":
         #-------------------------Data Migration to MySQL-------------------------#
         #credentials to connect to the database
         host='0.tcp.in.ngrok.io'
-        port=18720
+        port=port_number
         user='root'
-        password='abarna16'
+        password='your_password'
         charset='utf8'
         database='testdb'
 
@@ -480,9 +479,9 @@ if choice=="Channel Data Analysis and Visualization":
   # Connection and cursor for query
   conn = pymysql.connect(
       host='0.tcp.in.ngrok.io',
-      port=18720,
+      port=port_number,
       user='root',
-      password='abarna16',
+      password='your_password',
       charset='utf8',
       database='testdb'
           )
