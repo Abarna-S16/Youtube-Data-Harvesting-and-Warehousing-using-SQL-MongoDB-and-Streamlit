@@ -34,17 +34,7 @@ The YouTube API (Application Programming Interface) provides developers with a s
 ![Snap4](https://i.ibb.co/f9VSgsW/page4a.png)
 
 ![Snap5](https://i.ibb.co/pJ6Zsw3/page4b.png)
-## Snaps of the Application
-![Snap1](https://i.ibb.co/CWTWkyv/page1.png)
 
-![Snap2](https://i.ibb.co/8bZG39X/page2.png)
-
-![Snap3](https://i.ibb.co/bKRyrmK/page3.png)
-
-![Snap4](https://i.ibb.co/f9VSgsW/page4a.png)
-
-![Snap5](https://i.ibb.co/pJ6Zsw3/page4b.png)
-## Developer Guide
 Tools :
 - Google Colab
 - Python
