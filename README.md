@@ -42,6 +42,7 @@ Tools :
 - MongoDB Atlas
 - YouTube API Key
 - Ngrok
+  
 1.Extract the youtube channel data using API Key in Youtube developer console.
 
 2.Convert the data to a JSON format and upload to MongoDB and DataFrame to MySQL for warehousing.
